@@ -16,3 +16,6 @@ fd = lambda x: 3 * x**2 + 10 * x - 10
 #masukan kedalam method cari akar dengan parameter(f(x), toleransi error, interval awal(tambahkan interval akhir jika method secant), turunan f(x), method nya)
 newton_secant.cari_akar(f, 0.0001,[1.3], fd, 'newton')
 newton_secant.cari_akar(f, 0.0001,[1.3, 2],method='secant')
+
+print("Tekan enter untuk keluar")
+input()
