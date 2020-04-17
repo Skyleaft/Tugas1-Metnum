@@ -13,3 +13,5 @@ f = lambda x: x**3 + 5  * x**2 - 10 * x - 4
 
 fd = lambda x: 3 * x**2 + 10 * x - 10
 newton_secant.cari_akar(f, 0.0001,[1.3], fd, 'newton')
+
+newton_secant.cari_akar(f, 0.0001,[1.3, 2],method='secant')

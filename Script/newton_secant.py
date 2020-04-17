@@ -9,7 +9,7 @@ def cari_akar(f,e,x=[],fd=None ,method=''):
     list_xxn = []
     list_gra = []
 
-    if(method == 'newton'):
+    if method == 'newton':
         if fd is None:
             print("Masukan arg fd(Function Derivative)!")
         else:
@@ -18,7 +18,7 @@ def cari_akar(f,e,x=[],fd=None ,method=''):
             list_xxn += [None]
             list_gra += [None]
             g = lambda b: round(b - (f(b) / fd(b)), 6)
-    elif(method == 'secant'):
+    elif method == 'secant':
         if len(x) != 2:
             print("Masukan list arg x dengan 2 nilai")
         else:
@@ -41,8 +41,8 @@ def cari_akar(f,e,x=[],fd=None ,method=''):
             x += [g(x[-1])]
             list_fd += [round(fd(x[-1]), 6)]
         elif method == 'secant':
-            x += [g(x[-1])]
-            list_fd += [round(fd(x[-1]), 6)]
+            x += [g(x[-2], x[-1])]
+            list_fd += [round(f(x[-2]), 6)]
 
         list_xxn += [round(abs(x[-1] - x[-2]), 6)]
         list_gra += [round(abs((x[-1] - x[-2]) / x[-1]), 6)]
